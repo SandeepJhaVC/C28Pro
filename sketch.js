@@ -17,7 +17,7 @@ function setup() {
 
 	Engine.run(engine);
 
-	tree = new Tree(1000, 350, 400, 500);
+	tree = new Tree(1000, 600);
 	ground = new Ground(1000, 600, 2000, 10);
 	boy = new Boy(150, 450, 100, 300);
 	stone = new Stone(100, 200, 40, 40);
@@ -68,7 +68,7 @@ function detectCollison(lstone, lbanana) {
 	stoneBodyPosition = lstone.body.position;
 
 	var distance = dist(stoneBodyPosition.x, stoneBodyPosition.y, bananaBodyPosition.x, bananaBodyPosition.y)
-	if (distance <-lbanana.r+lstone.r) {
+	if (distance <=lbanana.r+lstone.r) {
 		Matter.Body.setStatic(lbanana.body, false);
 	}
 }
